@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <echo message="Building Windows MSI installer with jpackage..." />
+    <exec failonerror="true" executable="jpackage">
+      <arg value="--input" />
+      <arg value="target" />
+      <arg value="--name" />
+      <arg value="MSPRealEstate" />
+      <arg value="--main-jar" />
+      <arg value="msp-realestate-1.0-SNAPSHOT.jar" />
+      <arg value="--main-class" />
+      <arg value="com.msp.realestate.MSPRealEstateSystem" />
+      <arg value="--type" />
+      <arg value="msi" />
+      <arg value="--dest" />
+      <arg value="target/installer" />
+      <arg value="--vendor" />
+      <arg value="MSP Real Estate" />
+      <arg value="--app-version" />
+      <arg value="1.0" />
+      <arg value="--win-menu" />
+      <arg value="--win-shortcut" />
+      <arg value="--description" />
+      <arg value="MSP Real Estate System - Java 21 Desktop Application" />
+    </exec>
+    <echo message="MSI installer created in target/installer/" />
+  </target>
+</project>
